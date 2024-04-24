@@ -1,0 +1,90 @@
+/* this file contains the custom tailwind classes */
+
+.Main-loader {
+  width: 35px;
+  height: 35px;
+ }
+ 
+ .Main-loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border-top: 2px solid #0088ff;
+  border-right: 2px solid transparent;
+  animation: spinner8217 0.8s linear infinite;
+ }
+ 
+ @keyframes spinner8217 {
+  to {
+   transform: rotate(360deg);
+  }
+ }
+
+ .login-input{
+  @apply px-4 py-2 outline-none hover:border-lpink hover:border rounded-md  focus:border focus:border-pink-600 border border-lpurple
+ }
+ .div-head-blue{
+  @apply font-medium text-lblue text-lg
+ }
+
+ .rdt_TableCol_Sortable{
+ @apply text-slate-600 font-medium text-base overflow-visible text-wrap
+ }
+ .rdt_TableFooter{
+  
+ }
+
+ .form-label{
+ @apply text-sm font-medium text-slate-700 
+ }
+
+ .unique-code{
+  @apply  bg-gradient-to-r to-green-600 from-green-600 hover:from-green-700 hover:to-green-700
+ }
+ .green-btn{
+  @apply  bg-gradient-to-tr to-green-700 from-green-600 hover:from-green-700 hover:to-green-700 flex items-center gap-1 text-white
+ }
+ .red-btn{
+  @apply bg-gradient-to-tr to-red-600 from-red-600 hover:from-red-600 hover:to-red-700 flex items-center gap-1
+ }
+ .purple-btn{
+  @apply bg-lpurple hover:bg-lpurple/95 flex items-center gap-2 justify-center
+ }
+
+ .rdt_TableHeadRow{
+  @apply p-0
+ }
+
+ .table-cont{
+  @apply mt-4 shadow-sm border rounded-md pb-1
+ }
+ .input-field-1{
+  @apply shadow-sm hover:border-lpurple focus:border-lblue
+ }
+
+ .form-error{
+  @apply text-red-600 text-sm ml-1
+ }
+
+ .manage-cred-form-input-cont{
+  @apply flex gap-2 items-center justify-center
+ }
+ .manage-cred-rest{
+  @apply bg-red-600 hover:bg-red-700   w-fit flex items-center gap-1
+ }
+ .console-side-cont{
+  @apply w-2/3 lg:w-3/4 min-h-screen p-8
+ }
+ .details-point{
+  @apply text-lpurple font-medium
+ }
+ .date-input{
+  @apply w-full pl-3 text-left font-normal  hover:bg-transparent input-field-1
+ }
+
+ .signup-box{
+  @apply border rounded-lg w-2/5 xl:w-1/3 max-w-[480px] flex flex-col gap-4 px-12 py-8 mx-auto h-full shadow-sm hover:shadow-md
+ }
