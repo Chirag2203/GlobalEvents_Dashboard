@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./App.css"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Login from './components/Login'
 import {  AdminHome, DistributionReport, CollectionReport, MilkBarSalesReport,AddManger } from './components/admin'
-import { ManagerConsole, ManagerHome, MilkCollection, MilkBarSales, MilkDistribution } from './components/manager'
-
+import{ManagerHome, ManageEvents, BookTickets, Customers, ManageTickets} from "./components/manager"
 const App = () => {
+  useEffect(() => {
+    if (localStorage.theme === 'dark' || !('theme' in localStorage) ) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  },[])
+  
   return (
     <div>
       <Router>
@@ -19,9 +26,12 @@ const App = () => {
 
 
           <Route path="/manager/home" element={<ManagerHome />} />
-          <Route path="/manager/milk-collection" element={<MilkCollection />} /> 
-          <Route path="/manager/milk-bar-sales" element={<MilkBarSales />} />
-          <Route path="/manager/milk-distribution" element={<MilkDistribution />} />
+          <Route path="/manager/manage-events" element={<ManageEvents />} />
+          <Route path="/manager/book-tickets" element={<BookTickets />} />
+          <Route path="/manager/customers" element={<Customers />} />
+          <Route path="/manager/manage-tickets" element={<ManageTickets />} />
+
+          
 
         </Routes>
       </Router>

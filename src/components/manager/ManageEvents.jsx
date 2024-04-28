@@ -2,7 +2,7 @@ import React from "react";
 import ManagerConsole from "./ManagerConsole";
 import Banner from "../shared/Banner";
 
-const ManagerHome = () => {
+const ManageEvents = () => {
   return (
     <div>
       <ManagerConsole>
@@ -12,4 +12,4 @@ const ManagerHome = () => {
   );
 };
 
-export default ManagerHome;
+export default ManageEvents;

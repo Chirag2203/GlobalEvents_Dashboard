@@ -1,8 +1,7 @@
-import ManagerConsole from "./ManagerConsole";
+import BookTickets from "./BookTickets";
+import Customers from "./Customers";
+import ManageEvents from "./ManageEvents";
 import ManagerHome from "./ManagerHome";
-import MilkBarSales from "./MilkBarSales";
-import MilkCollection from "./MilkCollection";
-import MilkDistribution from "./MilkDistribution";
+import ManageTickets from "./ManageTickets";
 
-export { ManagerConsole, ManagerHome
-, MilkBarSales, MilkCollection, MilkDistribution};
+export { BookTickets, Customers, ManageEvents, ManagerHome, ManageTickets };

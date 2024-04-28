@@ -24,10 +24,10 @@
  }
 
  .login-input{
-  @apply px-4 py-2 outline-none hover:border-lpink hover:border rounded-md  focus:border focus:border-pink-600 border border-lpurple
+  @apply px-4 py-2 outline-none hover:border-lpink hover:border rounded-md  focus:border focus:border-pink-600 border border-primary
  }
  .div-head-blue{
-  @apply font-medium text-lblue text-lg
+  @apply font-medium text-lblue text-lg dark:text-primaryLighter
  }
 
  .rdt_TableCol_Sortable{
@@ -51,7 +51,7 @@
   @apply bg-gradient-to-tr to-red-600 from-red-600 hover:from-red-600 hover:to-red-700 flex items-center gap-1
  }
  .purple-btn{
-  @apply bg-lpurple hover:bg-lpurple/95 flex items-center gap-2 justify-center
+  @apply bg-primary hover:bg-primary/95 flex items-center gap-2 justify-center
  }
 
  .rdt_TableHeadRow{
@@ -62,7 +62,7 @@
   @apply mt-4 shadow-sm border rounded-md pb-1
  }
  .input-field-1{
-  @apply shadow-sm hover:border-lpurple focus:border-lblue
+  @apply shadow-sm hover:border-primary focus:border-lblue
  }
 
  .form-error{
@@ -79,7 +79,7 @@
   @apply w-2/3 lg:w-3/4 min-h-screen p-8
  }
  .details-point{
-  @apply text-lpurple font-medium
+  @apply text-primary font-medium
  }
  .date-input{
   @apply w-full pl-3 text-left font-normal  hover:bg-transparent input-field-1

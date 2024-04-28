@@ -18,6 +18,11 @@ module.exports = {
     },
     extend: {
       colors: {
+        primaryMain:"#2563eb",
+        primaryDark:"#1d4ed8",
+        primaryLight:"#0ea5e9",
+        primaryLighter:"#38bdf8",
+        secondaryMain:"#0369a1",
         lpink: "#EB3088",
         lpurple: "#A35BA4",
         lyellow: "#F9A024",

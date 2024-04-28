@@ -114,19 +114,13 @@ const Login = () => {
     <div>
       <ToastContainer />
       <div className="mt-8 flex flex-col item-center items-center min-h-screen gap-8  ">
-        <div className="flex justify-center gap-4">
-          <img
-            src={logo}
-            alt="jagratiLogo"
-            className="w-32 rounded-full border-2 "
-          />
-          <div className="mt-2">
-            <p className="text-4xl font-medium text-lpurple">Raja Farms</p>
+        <div className="flex justify-center items-center gap-4 flex-col">
+            <p className="text-4xl font-medium text-lpurple">Global Events</p>
             <p>
-              Bringing{" "}
-              <span className="font-semibold">Quality for All</span>
+              Connecting you to{" "}
+              <span className="font-semibold">The world of Events</span>
             </p>
-          </div>
+         
         </div>
         <form className="signup-box">
           <div className="flex flex-col gap-2 ">

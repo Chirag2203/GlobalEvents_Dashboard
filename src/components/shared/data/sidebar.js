@@ -18,23 +18,29 @@ export const managerSidebarData = [
         status: "active",
     },
     {
-        title: 'Milk Collection',
-        link:'/manager/milk-collection',
+        title: 'Customers',
+        link:'/manager/customers',
         logo: MdAddHomeWork,
         status: "active",
     },
     {
-        title: 'Milk Distribution',
-        link:'/manager/milk-distribution',
+        title: 'Manage Events',
+        link:'/manager/manage-events',
         logo: MdAddHomeWork,
         status: "active",
     },
     {
-        title: 'Milk Bar Sales',
-        link:'/manager/milk-bar-sales',
+        title: 'Book Tickets',
+        link:'/manager/book-tickets',
         logo: MdAddHomeWork,
         status: "active",
-    }
+    },
+    {
+        title: 'Manage Tickets',
+        link:'/manager/manage-tickets',
+        logo: MdAddHomeWork,
+        status: "active",
+    },
 
 ]
 
