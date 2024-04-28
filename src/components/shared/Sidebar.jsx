@@ -34,7 +34,7 @@ const Sidebar = ({ data }) => {
             <div className="mt-2">
               <p className="text-3xl font-semibold text-lpurple">RajaFarms</p>
               <p>
-                Manager Console,
+                Management Console
               </p>
             </div>
           </a>
