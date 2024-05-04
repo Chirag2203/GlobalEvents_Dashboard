@@ -1,6 +1,6 @@
 import React from "react";
-import ManagerConsole from "./ManagerConsole";
-import Banner from "../shared/Banner";
+import ManagerConsole from "../ManagerConsole";
+import Banner from "../../shared/Banner";
 
 const ManagerHome = () => {
   return (

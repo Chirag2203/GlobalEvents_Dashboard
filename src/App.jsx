@@ -3,7 +3,8 @@ import "./App.css"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Login from './components/Login'
 import {  AdminHome, DistributionReport, CollectionReport, MilkBarSalesReport,AddManger } from './components/admin'
-import{ManagerHome, ManageEvents, BookTickets, Customers, ManageTickets} from "./components/manager"
+import{ManagerHome,ViewEachEvent, ManageEvents, BookTickets, Customers, ManageTickets, CreateNewEvent, EditEachEvent, EditEvents, QuickTickets, ManagePresetTicket} from "./components/manager"
+
 const App = () => {
   useEffect(() => {
     if (localStorage.theme === 'dark' || !('theme' in localStorage) ) {
@@ -27,6 +28,13 @@ const App = () => {
 
           <Route path="/manager/home" element={<ManagerHome />} />
           <Route path="/manager/manage-events" element={<ManageEvents />} />
+          <Route path="/manager/manage-events/create" element={<CreateNewEvent />} />
+          <Route path="/manager/manage-events/edit" element={<EditEvents/>} />
+          <Route path="/manager/manage-events/edit/event" element={<EditEachEvent/>} />
+          <Route path="/manager/manage-events/view" element={<ViewEachEvent />} />
+
+          <Route path='/manager/book-tickets/quick-tickets' element={<QuickTickets />} />
+          <Route path='/manager/book-tickets/manage-preset-tickets' element={<ManagePresetTicket />} />
           <Route path="/manager/book-tickets" element={<BookTickets />} />
           <Route path="/manager/customers" element={<Customers />} />
           <Route path="/manager/manage-tickets" element={<ManageTickets />} />

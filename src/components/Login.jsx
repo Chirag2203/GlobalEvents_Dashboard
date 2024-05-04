@@ -20,6 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Input } from "./ui/input";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -131,7 +132,7 @@ const Login = () => {
               <RiUser3Line className="text-xl" />
               Username{" "}
             </label>
-            <input
+            <Input
               id="username"
               name="username"
               type="email"
@@ -149,7 +150,7 @@ const Login = () => {
             >
               <RiLockPasswordLine className="text-xl" /> Password
             </label>
-            <input
+            <Input
               id="password"
               name="password"
               type="password"

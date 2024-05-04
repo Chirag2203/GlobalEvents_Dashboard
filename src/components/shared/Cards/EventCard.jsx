@@ -1,69 +1,49 @@
 import { Button } from "@/components/ui/button";
 import React from "react";
+import { BiRightArrow, BiRightArrowAlt, BiRightArrowCircle } from "react-icons/bi";
+import { FaCalendar } from "react-icons/fa";
+import { FaLocationPin } from "react-icons/fa6";
+import { MdViewArray, MdViewModule } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 const EventCard = ({ event }) => {
   return (
-    <div class="w-full p-4 2xl:max-w-[300px] lg:max-w-[260px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div class="w-full 2xl:max-w-[300px] lg:max-w-[260px] bg-white border rounded-lg shadow dark:bg-gray-800 ">
       <a href="#" className="bg-orange-600 ">
         <img
-          src={event.image}
+          // src={event.image}
+          src="https://source.unsplash.com/400x400/?event"
           alt="event"
           class="w-full h-36 object-cover object-center rounded-t-lg"
         />
       </a>
-      <div class=" text-left">
+      <div class=" text-left bg-slate-100 shadow-sm dark:bg-slate-900 p-4 pt-2">
         <a href="#">
-          <h5 class="text-lg mt-1 font-medium  text-gray-900 dark:text-white">
-            {event.title}
+          <h5 class="text-xl mt-1 font-medium  text-gray-900 dark:text-white">
+            {event.name}
           </h5>
         </a>
-        <p className="text-gray-400 text-sm">{event.desc}</p>
-        <div class="flex items-center mt-2 mb-5">
-          <div class="flex items-center space-x-1 rtl:space-x-reverse">
-            <svg
-              class="w-4 h-4 text-amber-300"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 22 20"
-            >
-              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg
-              class="w-4 h-4 text-amber-300"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 22 20"
-            >
-              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-            <svg
-              class="w-4 h-4 text-amber-300"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 22 20"
-            >
-              <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
-            </svg>
-           
-          </div>
-          <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">
-            3.0
-          </span>
+        <div className="flex items-center gap-2 mt-2">
+          <p className="text-gray-400 text-sm flex items-center gap-2">
+            <FaCalendar /> {event.date}
+          </p>
+          <p className="text-gray-400 text-sm flex items-center gap-2">
+            <FaLocationPin />
+            {event.location}
+          </p>
         </div>
-        <div class="flex items-center justify-between">
+
+        <div class="flex items-center justify-between mt-6">
           <span class="text-xl font-bold text-gray-900 dark:text-white">
             ${event.price}
           </span>
           <Link
             // to={"/events/" + event.id}
-            to={`/events/category/event`}
-            
+            to={event.link}
           >
-            <Button className="text-white bg-blue-700 hover:bg-blue-800   focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 h-8">View</Button>
+            <Button className="text-white  font-medium rounded-md text-sm text-center gradient-blue h-8 flex items-center gap-1">
+              View <BiRightArrowAlt className="text-lg"/>
+            </Button>
           </Link>
         </div>
       </div>

@@ -1,5 +1,5 @@
 {
-  "name": "raja-farms",
+  "name": "global-events",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,20 +11,29 @@
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.0.5",
+    "@radix-ui/react-dialog": "^1.0.5",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-select": "^2.0.0",
     "@radix-ui/react-slot": "^1.0.2",
     "axios": "^1.6.8",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "embla-carousel-autoplay": "^8.0.2",
+    "embla-carousel-react": "^8.0.2",
+    "file-saver": "^2.0.5",
+    "jspdf": "^2.5.1",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.373.0",
     "react": "^18.2.0",
+    "react-data-table-component": "^7.6.2",
     "react-dom": "^18.2.0",
     "react-icons": "^5.1.0",
+    "react-qr-code": "^2.0.12",
     "react-router-dom": "^6.23.0",
     "react-toastify": "^10.0.5",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",

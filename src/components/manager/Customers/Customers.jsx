@@ -1,8 +1,8 @@
 import React from "react";
-import ManagerConsole from "./ManagerConsole";
-import Banner from "../shared/Banner";
+import ManagerConsole from "../ManagerConsole";
+import Banner from "../../shared/Banner";
 
-const ManageTickets = () => {
+const Customers = () => {
   return (
     <div>
       <ManagerConsole>
@@ -12,4 +12,4 @@ const ManageTickets = () => {
   );
 };
 
-export default ManageTickets;
+export default Customers;
