@@ -15,6 +15,7 @@ import { ExcelDownload, PdfDownload } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
 import { BiSave } from "react-icons/bi";
 import { MdDone } from "react-icons/md";
+import { Label } from "@/components/ui/label";
 
 const PresetTicketPopup = ({ ticket, title, disabled, handleClick, handleChange }) => {
   const [loading, setLoading] = useState(false);
@@ -33,14 +34,14 @@ const PresetTicketPopup = ({ ticket, title, disabled, handleClick, handleChange 
           <DialogHeader>
             <DialogTitle className="text-lpurple">
             
-            {ticket ?`Preset Ticket id: ${ticket.id}`: "Add New Preset Ticket"}
+            {ticket.name !==""?`Preset Ticket id: ${ticket.id}`: "Add New Preset Ticket"}
             </DialogTitle>
             <DialogDescription>
-              <p>Manage Preset Ticket</p>
+              <div>Manage Preset Ticket</div>
             </DialogDescription>
-            <div className="flex flex-col gap-2 pt-4 text-gray-300">
+            <div className="flex flex-col gap-2 pt-4 dark:text-gray-300">
               <div >
-                <label className="text-sm ">Ticket Name</label>
+                <Label className="text-sm ">Ticket Name</Label>
                 <Input
                   type="string"
                   className="border border-input w-full p-2 rounded-lg"
@@ -50,11 +51,11 @@ const PresetTicketPopup = ({ ticket, title, disabled, handleClick, handleChange 
                 />
               </div>
               <div>
-                <label className="text-sm text-gray-500">
+                <Label className="text-sm ">
                   Ticket Description
-                </label>
+                </Label>
                 <Input
-                  type="text"
+                  type="string"
                   className="border border-input w-full p-2 rounded-lg"
                   name="description"
                   value={ticket.description}
@@ -62,9 +63,9 @@ const PresetTicketPopup = ({ ticket, title, disabled, handleClick, handleChange 
                 />
               </div>
               <div>
-                <label className="text-sm text-gray-500">Ticket Price</label>
+                <Label className="text-sm ">Ticket Price</Label>
                 <Input
-                  type="text"
+                  type="string"
                   className="border border-input w-full p-2 rounded-lg"
                   name="price"
                   value={ticket.price}
@@ -72,7 +73,7 @@ const PresetTicketPopup = ({ ticket, title, disabled, handleClick, handleChange 
                 />
               </div>
               <div>
-                <label className="text-sm text-gray-500">Entry Count</label>
+                <Label className="text-sm ">Entry Count</Label>
                 <Input
                   type="text"
                   className="border border-input w-full p-2 rounded-lg"

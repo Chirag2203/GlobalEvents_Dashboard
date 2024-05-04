@@ -30,21 +30,12 @@ const ticketData = [
   },
 ];
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormData({
-    ...formData,
-    [name]: value,
-  });
-};
 
-const handleClick = () => {
-  // save the new data
-};
 const handleDelete = () => {};
 const ManagePresetTicket = () => {
   const [selectedTicketIndex, setSelectedTicketIndex] = useState("");
   const [selectedTicket, setSelectedTicket] = useState({});
+
   const handleTicketSelect = (index) => {
     if (selectedTicketIndex.includes(index)) {
       setSelectedTicketIndex(
@@ -58,7 +49,17 @@ const ManagePresetTicket = () => {
     console.log(ticketData[index]);
     setSelectedTicket(ticketData[index]);
   };
-
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSelectedTicket({
+      ...selectedTicket,
+      [name]: value,
+    });
+  };
+  
+  const handleClick = () => {
+    // save the new data
+  };
   return (
     <div>
       <ManagerConsole>
@@ -68,20 +69,18 @@ const ManagePresetTicket = () => {
             title={"Delete"}
             task={" Delete this ticket"}
             handleClick={handleDelete}
-            disabled={selectedTicketIndex.length <= 0}
+            disabled={selectedTicketIndex <= 0}
           />
           <PresetTicketPopup
             ticket={selectedTicket}
-            icon={PlusIcon}
             title={"Edit"}
-            disabled={selectedTicketIndex.length <= 0}
+            disabled={selectedTicketIndex <= 0}
             handleChange={handleChange}
             handleClick={handleClick}
           />
           {/* check again */}
           <PresetTicketPopup
-            ticket={{name:"",price:"", count:"", description:"" }}
-            icon={PlusIcon}
+            ticket={{name:"",price:"", entryCount:"", description:"" }}
             title={"Add New"}
             disabled={false}
             handleChange={handleChange}

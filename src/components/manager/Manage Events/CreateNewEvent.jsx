@@ -129,17 +129,6 @@ const CreateNewEvent = () => {
             />
           </div>
           <div className="w-1/3">
-            <Label>Capacity</Label>
-            <Input
-              type="number"
-              name="capacity"
-              value={formData.capacity}
-              onChange={handleChange}
-              className="w-full"
-              placeholder="Event Capacity"
-            />
-          </div>
-          <div className="w-1/3">
             <Label>Keywords</Label>
             <Input
               type="string"
@@ -180,6 +169,14 @@ const CreateNewEvent = () => {
                     value={fee.value}
                     onChange={(e) => handleItemChange(e, index, "feeStructure")}
                     placeholder="Value"
+                    className="w-full"
+                  />
+                  <Input
+                    type="text"
+                    name="capacity"
+                    value={fee.capacity}
+                    onChange={(e) => handleItemChange(e, index, "feeStructure")}
+                    placeholder="Capacity"
                     className="w-full"
                   />
                   <Input

@@ -2,10 +2,10 @@ import React from 'react'
 import { Button } from "../../ui/button";
 import { PlusIcon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaPlusSquare } from "react-icons/fa";
 import { Input } from "../../ui/input";
 import { BiSearch } from 'react-icons/bi';
-const BookTicketsNavbar = () => {
+const BookTicketsNavbar = ({handleBookTickets}) => {
   return (
     <div className="mt-2">
           <div className="flex justify-end gap-2">
@@ -17,13 +17,10 @@ const BookTicketsNavbar = () => {
             />
             <BiSearch className="text-lg -ml-8"/>
             </div>
-            <Link to="/manager/manage-events/edit">
-              <Button className="flex items-center justify-center gap-2">
+              <Button className="flex items-center justify-center gap-2" onClick={handleBookTickets}>
                 {" "}
-                Edit
-                <FaEdit className="" />
+                Book Ticket
               </Button>
-            </Link>
             <Link to="/manager/book-tickets/quick-tickets">
               <Button className=" ">
                 Quick Ticket <PlusIcon className="w-5 mt-1 ml-1" />
