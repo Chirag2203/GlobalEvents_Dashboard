@@ -5,50 +5,7 @@ import { Button } from "../../ui/button";
 import { Input } from "../../ui/input";
 import ManageEventsNavbar from "./ManageEventsNavbar";
 import EventCard from "../../shared/Cards/EventCard";
-
-const eventData=[
-  {
-    name:"Event 1",
-    date:"12-12-2021",
-    price:"1000",
-    location:"Delhi",
-    capacity:"200",
-    link:"/manager/manage-events/view"
-  },
-  {
-    name:"Event 2",
-    date:"12-12-2021",
-    price:"1000",
-    location:"Delhi",
-    capacity:"200",
-    link:"/manager/manage-events/view"
-  },
-  {
-    name:"Event 3",
-    date:"12-12-2021",
-    price:"1000",
-    location:"Delhi",
-    capacity:"200",
-    link:"/manager/manage-events/view"
-  },
-  {
-    name:"Event 4",
-    date:"12-12-2021",
-    price:"1000",
-    location:"Delhi",
-    capacity:"200",
-    link:"/manager/manage-events/view"
-  },
-  {
-    name:"Event 5",
-    date:"12-12-2021",
-    price:"1000",
-    location:"Delhi",
-    capacity:"200",
-    link:"/manager/manage-events/view"
-  },
-  
-]
+import { eventData } from "@/components/shared/data/dummy";
 const ManageEvents = () => {
   return (
     <div>
@@ -61,6 +18,7 @@ const ManageEvents = () => {
           {eventData.map((event, index) => (
             <EventCard
               event={event}
+              type={"event"}
               />
           ))}
           </div>

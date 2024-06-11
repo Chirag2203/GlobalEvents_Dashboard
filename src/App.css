@@ -86,9 +86,46 @@
  }
 
  .signup-box{
-  @apply border rounded-lg w-2/5 xl:w-1/3 max-w-[480px] flex flex-col gap-4 px-12 py-8 mx-auto h-full shadow-sm hover:shadow-md
+  @apply border rounded-lg w-2/5 xl:w-1/3 max-w-[480px] flex flex-col gap-4 px-12 py-8 mx-auto h-full shadow-sm hover:shadow-md border-slate-300 bg-gradient-to-tr from-slate-200 to-slate-100  dark:from-slate-800 dark:to-slate-900 dark:border-none
  }
 
  .gradient-blue{
-  @apply bg-gradient-to-r from-primaryDark to-primaryLighter
+  @apply bg-gradient-to-r from-primaryDark to-primaryLighter text-white
  }
+
+  .gradient-green{
+    @apply bg-gradient-to-r from-green-600 to-green-500 text-white
+  }
+
+  .gradient-red{
+    @apply bg-gradient-to-r from-red-600 to-red-500 text-white
+  }
+  .input-primary{
+    @apply border hover:border-blue-500 focus:border-blue-700 dark:bg-slate-900 
+  }
+  .input-label{
+    @apply text-sm font-medium dark:text-slate-300 text-slate-700 flex items-center gap-2 justify-center
+  }
+
+  .heading-blue{
+    @apply text-4xl font-medium text-sky-500 dark:text-sky-500
+  }
+
+  .flex-col-4{
+    @apply flex flex-col gap-4 items-center justify-center
+  }
+  .flex-row-4{
+    @apply flex flex-row gap-4 items-center justify-center
+  }
+
+  .main-btn{
+    @apply bg-gradient-to-r dark:text-white from-primaryDark to-primaryLight text-white hover:to-primaryMain rounded-md flex items-center gap-2 justify-center
+  }
+
+  .secondary-btn{
+    @apply dark:bg-transparent bg-transparent dark:text-sky-500 dark:hover:text-sky-400 dark:hover:bg-transparent  border-sky-700 border text-blue-500 hover:text-sky-400  flex gap-2 items-center justify-center 
+  }
+
+  .login-page{
+    @apply bg-slate-200 dark:bg-slate-900 h-screen
+  }

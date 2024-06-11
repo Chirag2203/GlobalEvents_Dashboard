@@ -2,8 +2,10 @@ import React, { useEffect } from 'react'
 import "./App.css"
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Login from './components/Login'
+import Register from './components/Register'
 import {  AdminHome, DistributionReport, CollectionReport, MilkBarSalesReport,AddManger } from './components/admin'
-import{ManagerHome,ViewEachEvent, ManageEvents, BookTickets, Customers, ManageTickets, CreateNewEvent, EditEachEvent, EditEvents, QuickTickets, ManagePresetTicket} from "./components/manager"
+import{ManagerHome,ViewEachEvent, ManageEvents, BookTickets, EachEventTickets, Customers, ManageTickets, CreateNewEvent, EditEachEvent, EditEvents, QuickTickets, ManagePresetTicket} from "./components/manager"
+import { ToastContainer } from 'react-toastify'
 
 const App = () => {
   useEffect(() => {
@@ -16,9 +18,11 @@ const App = () => {
   
   return (
     <div>
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path='/register' element={<Register />} />
           <Route path="/admin/home" element={<AdminHome />} />
           <Route path="/admin/distribution-report" element={<DistributionReport />} />
           <Route path="/admin/milk-bar-sales" element={<MilkBarSalesReport />} />
@@ -38,6 +42,7 @@ const App = () => {
           <Route path="/manager/book-tickets" element={<BookTickets />} />
           <Route path="/manager/customers" element={<Customers />} />
           <Route path="/manager/manage-tickets" element={<ManageTickets />} />
+          <Route path='/manager/manage-tickets/view' element={<EachEventTickets/>} />
 
           
 

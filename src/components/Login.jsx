@@ -6,12 +6,12 @@ import {
   RiLockPasswordLine,
   RiUser3Line,
 } from "react-icons/ri";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
-import logo from "@/assets/logo.jpeg";
+import bg from "@/assets/backgrounds/login.svg";
 import {
   Select,
   SelectContent,
@@ -21,6 +21,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "./ui/input";
+import { BoxBg } from "./shared/BoxBg";
+import LoginConsole from "./LoginConsole";
+import { FaThemeco } from "react-icons/fa";
+import { MoonIcon, SunIcon } from "lucide-react";
+import { handleThemeChange } from "@/lib/utils";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -43,7 +48,6 @@ const Login = () => {
     return num.toString().padStart(2, "0");
   };
 
-
   const onLogin = async (e) => {
     e.preventDefault();
     if (!username || !password) {
@@ -51,22 +55,22 @@ const Login = () => {
       return;
     }
     try {
-        setLoading(true);
-        if(username === "admin" && password === "admin"){
-            navigate("/admin/home")
-        }else if(username === "manager" && password === "manager"){
-            navigate("/manager/home")
-        }else{
-            toast.error("Invalid username or password")
-        }
+      setLoading(true);
+      if (username === "admin" && password === "admin") {
+        navigate("/admin/home");
+      } else if (username === "manager" && password === "manager") {
+        navigate("/manager/home");
+      } else {
+        toast.error("Invalid username or password");
+      }
     } catch (error) {
-        console.error("Error logging in:", error);
-        setLoading(false);
-        toast.error("An error occurred while logging in");
+      console.error("Error logging in:", error);
+      setLoading(false);
+      toast.error("An error occurred while logging in");
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
-    
+
     // e.preventDefault();
     // localStorage.clear();
     // try {
@@ -111,23 +115,31 @@ const Login = () => {
     // }
   };
 
+
   return (
-    <div>
-      <ToastContainer />
-      <div className="mt-8 flex flex-col item-center items-center min-h-screen gap-8  ">
-        <div className="flex justify-center items-center gap-4 flex-col">
-            <p className="text-4xl font-medium text-lpurple">Global Events</p>
-            <p>
-              Connecting you to{" "}
-              <span className="font-semibold">The world of Events</span>
-            </p>
-         
+    <LoginConsole>
+      <div className="p-12 login-page">
+        <div className="flex justify-between items-center">
+          <p className="text-3xl font-medium dark:text-gray-300 text-slate-800">
+            Login to your account
+          </p>
+          <div>
+            {localStorage.getItem("theme") === "dark" ? (
+              <button onClick={handleThemeChange}>
+                <SunIcon className="w-8 h-8  cursor-pointer" />
+              </button>
+            ) : (
+              <button onClick={handleThemeChange}>
+                <MoonIcon className="w-8 h-8  cursor-pointer" />
+              </button>
+            )}
+          </div>
         </div>
-        <form className="signup-box">
+        <form className="signup-box h-auto w-full mx-0 mt-16">
           <div className="flex flex-col gap-2 ">
             <label
               htmlFor="email-address"
-              className="text-lg flex gap-2 items-center"
+              className="input-label justify-start"
             >
               <RiUser3Line className="text-xl" />
               Username{" "}
@@ -136,7 +148,7 @@ const Login = () => {
               id="username"
               name="username"
               type="email"
-              className="login-input  "
+              className="input-primary "
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
@@ -144,37 +156,29 @@ const Login = () => {
           </div>
 
           <div className="flex flex-col gap-2 ">
-            <label
-              htmlFor="password"
-              className="text-lg flex items-center gap-2"
-            >
+            <label htmlFor="password" className="input-label justify-start">
               <RiLockPasswordLine className="text-xl" /> Password
             </label>
             <Input
               id="password"
               name="password"
               type="password"
-              className="login-input"
+              className="input-primary"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          
+
           <div className="flex gap-4 justify-end items-center mt-4">
-            <Button className="border border-input hover:bg-lpink/5 bg-white hover:text-lpink text-lpurple">
-              Forgot Password
-            </Button>
+            <Button className="secondary-btn bg-transparent text-sky-500 hover:text-sky-400 hover:bg-transparent">Forgot Password</Button>
             {/* <Button
-              className="w-1/3 bg-lpurple/90 text-white hover:bg-lpink/80 text-md"
-              onClick={handleRegister}
-            >
-              Register
-            </Button> */}
-            <Button
-              className="w-1/3 bg-lpurple/90 text-white hover:bg-lpink/80 text-md"
-              onClick={onLogin}
-            >
+                className="w-1/3 bg-lpurple/90 text-white hover:bg-lpink/80 text-md"
+                onClick={handleRegister}
+              >
+                Register
+              </Button> */}
+            <Button className="main-btn w-1/3" onClick={onLogin}>
               Login
             </Button>
           </div>
@@ -184,12 +188,13 @@ const Login = () => {
             </div>
           )}
         </form>
-        {/* <div className="flex flex-col items-center mt-12 gap-4 text-slate-800 ">
-          <img src={govtLogo} alt="govtLogo" className="w-2/5 " />
-          
-        </div> */}
+        <div className="mt-4">
+          Don't have an account?{" "} 
+          <Link to="/register" className="text-sky-500 hover:text-sky-400">Register</Link>
+
+        </div>
       </div>
-    </div>
+    </LoginConsole>
   );
 };
 

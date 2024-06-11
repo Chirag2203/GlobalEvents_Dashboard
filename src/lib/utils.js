@@ -30,3 +30,13 @@ export const PdfDownload = (reportData) => {
   pdf.autoTable({ columns, body: rows });
   pdf.save("report.pdf");
 };
+ export const handleThemeChange = () => {
+   const currTheme = localStorage.getItem("theme");
+   if (currTheme === "dark") {
+     localStorage.setItem("theme", "light");
+     document.documentElement.classList.remove("dark");
+   } else {
+     localStorage.setItem("theme", "dark");
+     document.documentElement.classList.add("dark");
+   }
+ };

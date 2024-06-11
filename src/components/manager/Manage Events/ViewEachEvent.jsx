@@ -2,6 +2,7 @@ import React from "react";
 import ManagerConsole from "../ManagerConsole";
 import Banner from "../../shared/Banner";
 import MovingCarousel from "@/components/shared/MovingCarousel";
+import ViewEachEventNavbar from "./ViewEachEventNavbar";
 
 const eventStats = [
   {
@@ -87,6 +88,7 @@ const ViewEachEvent = () => {
     <div>
       <ManagerConsole>
         <Banner name="View Each Event" />
+        <ViewEachEventNavbar/>
         <div>
           <p className="div-head-blue">Event Details</p>
           <div>

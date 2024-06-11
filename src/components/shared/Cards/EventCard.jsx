@@ -6,10 +6,13 @@ import { FaLocationPin } from "react-icons/fa6";
 import { MdViewArray, MdViewModule } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const EventCard = ({ event }) => {
+const EventCard = ({ event, type }) => {
+  const link = type === "event"? "/manager/manage-events/view": "/manager/manage-tickets/view"
+  
   return (
     <div class="w-full 2xl:max-w-[300px] lg:max-w-[260px] bg-white border rounded-lg shadow dark:bg-gray-800 ">
-      <a href="#" className="bg-orange-600 ">
+      <a href="#" className="bg-orange-600 relative ">
+        <p className={`absolute top-0 left-0 z-100 font-medium text-sm text-white ${event.status==="Deactive"?"bg-red-600 ":"bg-green-600"} p-1 px-2 rounded-e-md`}>{event.status}</p>
         <img
           // src={event.image}
           src="https://source.unsplash.com/400x400/?event"
@@ -39,7 +42,7 @@ const EventCard = ({ event }) => {
           </span>
           <Link
             // to={"/events/" + event.id}
-            to={event.link}
+            to={link}
           >
             <Button className="text-white  font-medium rounded-md text-sm text-center gradient-blue h-8 flex items-center gap-1">
               View <BiRightArrowAlt className="text-lg"/>

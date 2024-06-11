@@ -10,8 +10,9 @@ import ManageEventsNavbar from "./Manage Events/ManageEventsNavbar";
 import ViewEachEvent from "./Manage Events/ViewEachEvent";
 import QuickTickets from "./Book Tickets/QuickTickets";
 import ManagePresetTicket from "./Book Tickets/ManagePresetTicket";
+import EachEventTickets from "./Manage Tickets/EachEventTickets";
 
 
 
 
-export { BookTickets, Customers, ManageEvents, ManagerHome, ManageTickets, CreateNewEvent, EditEachEvent, EditEvents, ManageEventsNavbar, ViewEachEvent, QuickTickets, ManagePresetTicket};
+export { BookTickets, Customers, ManageEvents, ManagerHome,EachEventTickets, ManageTickets, CreateNewEvent, EditEachEvent, EditEvents, ManageEventsNavbar, ViewEachEvent, QuickTickets, ManagePresetTicket};
